@@ -12,6 +12,7 @@ import 'package:flutter/material.dart' as _i6;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i5;
 import 'package:my_first_app/app/models/news/news_model.dart' as _i10;
+import 'package:my_first_app/services/failure_service.dart' as _i9;
 import 'package:my_first_app/services/login_service.dart' as _i11;
 import 'package:my_first_app/services/news_service.dart' as _i9;
 import 'package:my_first_app/services/shop_service.dart' as _i12;

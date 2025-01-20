@@ -21,7 +21,7 @@ class NewsViewModel extends BaseViewModel {
     setBusy(true);
     _errorMessage = null;
     final result = await _getApiNews.getApi();
-    print('Masuk VM 1 : ${result}');
+    print('Masuk VM 1 : $result');
 
     result.fold((failure) {
       _errorMessage = failure.message;

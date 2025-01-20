@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "980261534566",
+    "firebase_url": "https://oktastudio-ff8ec-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "oktastudio-ff8ec",
+    "storage_bucket": "oktastudio-ff8ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980261534566:android:d1a879847f15af821666a7",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "980261534566-169nkvghaukgluqsbl32rrgtfe10r7gp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY6L6vUAecepavXeDGLad-qygXnHJ5XXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "980261534566-169nkvghaukgluqsbl32rrgtfe10r7gp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "980261534566-06qa89q1ssn705807150i591036cceo4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ecommerce"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980261534566:android:183ae787960384cd1666a7",
+        "android_client_info": {
+          "package_name": "com.example.my_first_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "980261534566-169nkvghaukgluqsbl32rrgtfe10r7gp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY6L6vUAecepavXeDGLad-qygXnHJ5XXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "980261534566-169nkvghaukgluqsbl32rrgtfe10r7gp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "980261534566-06qa89q1ssn705807150i591036cceo4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ecommerce"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

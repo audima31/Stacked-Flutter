@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:my_first_app/app/models/news/news_model.dart';
+import 'package:my_first_app/services/failure_service.dart';
 
 class NewsService {
   final dio = Dio();
@@ -20,9 +21,4 @@ class NewsService {
       return Left(Failure(message: e.toString()));
     }
   }
-}
-
-class Failure {
-  String? message;
-  Failure({this.message});
 }

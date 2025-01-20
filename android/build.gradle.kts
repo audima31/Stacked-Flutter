@@ -1,3 +1,18 @@
+buildscript {
+    val kotlinVersion by extra("1.7.10")
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    
+    dependencies {
+        classpath ("com.android.tools.build:gradle:7.2.2")
+        classpath ("com.google.gms:google-services:4.4.2") // Perbaikan di sini
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+    }
+}
+
 allprojects {
     repositories {
         google()

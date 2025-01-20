@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/ui/views/login/widget/form_login.dart';
 import 'package:stacked/stacked.dart';
 
 import 'login_viewmodel.dart';
@@ -8,21 +9,22 @@ class LoginView extends StackedView<LoginViewModel> {
 
   @override
   Widget builder(
-    BuildContext context,
-    LoginViewModel viewModel,
-    Widget? child,
-  ) {
+      BuildContext context, LoginViewModel viewModel, Widget? child) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
+      appBar: AppBar(
+        title: const Text('Login'),
+        centerTitle: true,
+      ),
       body: Container(
-        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+        child: Center(
+          child: FormLogin(viewModel: viewModel),
+        ),
       ),
     );
   }
 
   @override
-  LoginViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      LoginViewModel();
+  LoginViewModel viewModelBuilder(BuildContext context) => LoginViewModel();
 }
