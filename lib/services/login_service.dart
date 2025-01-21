@@ -1,7 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:my_first_app/app/models/login/authentication_model.dart';
 import 'package:my_first_app/services/failure_service.dart';
 
 class LoginService {

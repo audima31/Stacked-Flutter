@@ -15,7 +15,7 @@ class NewsView extends StackedView<NewsViewModel> {
     print('Masuk NewsView : ${newsData?.posts!.length}');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         title: const Text('News'),
       ),

@@ -10,6 +10,7 @@ import 'package:my_first_app/ui/views/login/login_view.dart';
 import 'package:my_first_app/services/login_service.dart';
 import 'package:my_first_app/ui/views/shop/shop_view.dart';
 import 'package:my_first_app/services/shop_service.dart';
+import 'package:my_first_app/services/remote_config_firebase_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -28,6 +29,7 @@ import 'package:my_first_app/services/shop_service.dart';
     LazySingleton(classType: NewsService),
     LazySingleton(classType: LoginService),
     LazySingleton(classType: ShopService),
+    LazySingleton(classType: RemoteConfigFirebaseService),
 // @stacked-service
   ],
   bottomsheets: [

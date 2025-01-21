@@ -15,10 +15,10 @@ class ShopView extends StackedView<ShopViewModel> {
     print('Masuk ShopView : ${viewModel.productModel?.length}');
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shop'),
+        title: const Text('Shop'),
         centerTitle: true,
       ),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.only(left: 25.0, right: 25.0),
@@ -44,7 +44,7 @@ class ShopView extends StackedView<ShopViewModel> {
                             print('Masuk Shop_View : ${data!.brand}');
                             return Card(
                               child: ListTile(
-                                leading: Image.network('${data.image[0]}'),
+                                leading: Image.network(data.image[0]),
                                 title: Text(data.brand),
                                 trailing: Text(data.price.toString()),
                               ),

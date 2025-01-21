@@ -11,11 +11,14 @@ import 'package:dio/dio.dart' as _i2;
 import 'package:flutter/material.dart' as _i6;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i5;
-import 'package:my_first_app/app/models/news/news_model.dart' as _i10;
-import 'package:my_first_app/services/failure_service.dart' as _i9;
-import 'package:my_first_app/services/login_service.dart' as _i11;
+import 'package:my_first_app/app/models/news/news_model.dart' as _i11;
+import 'package:my_first_app/app/models/shop/shop_product_model.dart' as _i14;
+import 'package:my_first_app/services/failure_service.dart' as _i10;
+import 'package:my_first_app/services/login_service.dart' as _i12;
 import 'package:my_first_app/services/news_service.dart' as _i9;
-import 'package:my_first_app/services/shop_service.dart' as _i12;
+import 'package:my_first_app/services/remote_config_firebase_service.dart'
+    as _i15;
+import 'package:my_first_app/services/shop_service.dart' as _i13;
 import 'package:stacked_services/stacked_services.dart' as _i4;
 
 // ignore_for_file: type=lint
@@ -729,15 +732,15 @@ class MockNewsService extends _i1.Mock implements _i9.NewsService {
       ) as _i2.Dio);
 
   @override
-  _i7.Future<_i3.Either<_i9.Failure, _i10.ResponseGetNews>> getApi() =>
+  _i7.Future<_i3.Either<_i10.Failure, _i11.ResponseGetNews>> getApi() =>
       (super.noSuchMethod(
         Invocation.method(
           #getApi,
           [],
         ),
         returnValue:
-            _i7.Future<_i3.Either<_i9.Failure, _i10.ResponseGetNews>>.value(
-                _FakeEither_1<_i9.Failure, _i10.ResponseGetNews>(
+            _i7.Future<_i3.Either<_i10.Failure, _i11.ResponseGetNews>>.value(
+                _FakeEither_1<_i10.Failure, _i11.ResponseGetNews>(
           this,
           Invocation.method(
             #getApi,
@@ -745,23 +748,170 @@ class MockNewsService extends _i1.Mock implements _i9.NewsService {
           ),
         )),
         returnValueForMissingStub:
-            _i7.Future<_i3.Either<_i9.Failure, _i10.ResponseGetNews>>.value(
-                _FakeEither_1<_i9.Failure, _i10.ResponseGetNews>(
+            _i7.Future<_i3.Either<_i10.Failure, _i11.ResponseGetNews>>.value(
+                _FakeEither_1<_i10.Failure, _i11.ResponseGetNews>(
           this,
           Invocation.method(
             #getApi,
             [],
           ),
         )),
-      ) as _i7.Future<_i3.Either<_i9.Failure, _i10.ResponseGetNews>>);
+      ) as _i7.Future<_i3.Either<_i10.Failure, _i11.ResponseGetNews>>);
 }
 
 /// A class which mocks [LoginService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockLoginService extends _i1.Mock implements _i11.LoginService {}
+class MockLoginService extends _i1.Mock implements _i12.LoginService {
+  @override
+  _i7.Future<_i3.Either<_i10.Failure, _i12.SignUpDartz>> signUp({
+    required String? email,
+    required String? password,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #signUp,
+          [],
+          {
+            #email: email,
+            #password: password,
+          },
+        ),
+        returnValue:
+            _i7.Future<_i3.Either<_i10.Failure, _i12.SignUpDartz>>.value(
+                _FakeEither_1<_i10.Failure, _i12.SignUpDartz>(
+          this,
+          Invocation.method(
+            #signUp,
+            [],
+            {
+              #email: email,
+              #password: password,
+            },
+          ),
+        )),
+        returnValueForMissingStub:
+            _i7.Future<_i3.Either<_i10.Failure, _i12.SignUpDartz>>.value(
+                _FakeEither_1<_i10.Failure, _i12.SignUpDartz>(
+          this,
+          Invocation.method(
+            #signUp,
+            [],
+            {
+              #email: email,
+              #password: password,
+            },
+          ),
+        )),
+      ) as _i7.Future<_i3.Either<_i10.Failure, _i12.SignUpDartz>>);
+
+  @override
+  _i7.Future<_i3.Either<_i10.Failure, _i12.SignInDartz>> signIn({
+    required String? email,
+    required String? password,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #signIn,
+          [],
+          {
+            #email: email,
+            #password: password,
+          },
+        ),
+        returnValue:
+            _i7.Future<_i3.Either<_i10.Failure, _i12.SignInDartz>>.value(
+                _FakeEither_1<_i10.Failure, _i12.SignInDartz>(
+          this,
+          Invocation.method(
+            #signIn,
+            [],
+            {
+              #email: email,
+              #password: password,
+            },
+          ),
+        )),
+        returnValueForMissingStub:
+            _i7.Future<_i3.Either<_i10.Failure, _i12.SignInDartz>>.value(
+                _FakeEither_1<_i10.Failure, _i12.SignInDartz>(
+          this,
+          Invocation.method(
+            #signIn,
+            [],
+            {
+              #email: email,
+              #password: password,
+            },
+          ),
+        )),
+      ) as _i7.Future<_i3.Either<_i10.Failure, _i12.SignInDartz>>);
+
+  @override
+  _i7.Future<_i3.Either<_i10.Failure, _i12.SignOutDartz>> signOut() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #signOut,
+          [],
+        ),
+        returnValue:
+            _i7.Future<_i3.Either<_i10.Failure, _i12.SignOutDartz>>.value(
+                _FakeEither_1<_i10.Failure, _i12.SignOutDartz>(
+          this,
+          Invocation.method(
+            #signOut,
+            [],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i7.Future<_i3.Either<_i10.Failure, _i12.SignOutDartz>>.value(
+                _FakeEither_1<_i10.Failure, _i12.SignOutDartz>(
+          this,
+          Invocation.method(
+            #signOut,
+            [],
+          ),
+        )),
+      ) as _i7.Future<_i3.Either<_i10.Failure, _i12.SignOutDartz>>);
+}
 
 /// A class which mocks [ShopService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockShopService extends _i1.Mock implements _i12.ShopService {}
+class MockShopService extends _i1.Mock implements _i13.ShopService {
+  @override
+  _i7.Future<_i3.Either<_i10.Failure, List<_i14.ShopProductModel>>>
+      fetchDataProduct() => (super.noSuchMethod(
+            Invocation.method(
+              #fetchDataProduct,
+              [],
+            ),
+            returnValue: _i7.Future<
+                    _i3
+                    .Either<_i10.Failure, List<_i14.ShopProductModel>>>.value(
+                _FakeEither_1<_i10.Failure, List<_i14.ShopProductModel>>(
+              this,
+              Invocation.method(
+                #fetchDataProduct,
+                [],
+              ),
+            )),
+            returnValueForMissingStub: _i7.Future<
+                    _i3
+                    .Either<_i10.Failure, List<_i14.ShopProductModel>>>.value(
+                _FakeEither_1<_i10.Failure, List<_i14.ShopProductModel>>(
+              this,
+              Invocation.method(
+                #fetchDataProduct,
+                [],
+              ),
+            )),
+          ) as _i7
+              .Future<_i3.Either<_i10.Failure, List<_i14.ShopProductModel>>>);
+}
+
+/// A class which mocks [RemoteConfigFirebaseService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockRemoteConfigFirebaseService extends _i1.Mock
+    implements _i15.RemoteConfigFirebaseService {}

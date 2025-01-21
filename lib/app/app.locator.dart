@@ -13,6 +13,7 @@ import 'package:stacked_shared/stacked_shared.dart';
 
 import '../services/login_service.dart';
 import '../services/news_service.dart';
+import '../services/remote_config_firebase_service.dart';
 import '../services/shop_service.dart';
 
 final locator = StackedLocator.instance;
@@ -32,4 +33,5 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => NewsService());
   locator.registerLazySingleton(() => LoginService());
   locator.registerLazySingleton(() => ShopService());
+  locator.registerLazySingleton(() => RemoteConfigFirebaseService());
 }

@@ -5,6 +5,7 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:my_first_app/services/news_service.dart';
 import 'package:my_first_app/services/login_service.dart';
 import 'package:my_first_app/services/shop_service.dart';
+import 'package:my_first_app/services/remote_config_firebase_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -18,6 +19,8 @@ import 'test_helpers.mocks.dart';
     MockSpec<NewsService>(onMissingStub: OnMissingStub.returnDefault),
     MockSpec<LoginService>(onMissingStub: OnMissingStub.returnDefault),
     MockSpec<ShopService>(onMissingStub: OnMissingStub.returnDefault),
+    MockSpec<RemoteConfigFirebaseService>(
+        onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
   ],
 )

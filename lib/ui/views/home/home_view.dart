@@ -22,6 +22,18 @@ class HomeView extends StackedView<HomeViewModel> {
                 verticalSpaceLarge,
                 Column(
                   children: [
+                    Center(
+                      child: Column(
+                        children: [
+                          viewModel.isBusy
+                              ? const CircularProgressIndicator()
+                              : Text(
+                                  '${viewModel.remoteConfig?.getString('name')}'),
+                          Text('Age'),
+                          Text('Name'),
+                        ],
+                      ),
+                    ),
                     const Text(
                       'Hello, STACKED!',
                       style: TextStyle(

@@ -1,7 +1,5 @@
 import 'package:my_first_app/app/app.locator.dart';
 import 'package:my_first_app/app/app.router.dart';
-import 'package:my_first_app/app/models/login/authentication_model.dart';
-import 'package:my_first_app/services/failure_service.dart';
 import 'package:my_first_app/services/login_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
