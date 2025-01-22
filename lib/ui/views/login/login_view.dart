@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/ui/views/login/login_view.form.dart';
 import 'package:my_first_app/ui/views/login/widget/form_login.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked/stacked_annotations.dart';
 
 import 'login_viewmodel.dart';
 
-class LoginView extends StackedView<LoginViewModel> {
+@FormView(fields: [
+  FormTextField(
+    name: 'email',
+  ),
+  FormTextField(
+    name: 'password',
+  ),
+])
+class LoginView extends StackedView<LoginViewModel> with $LoginView {
   const LoginView({Key? key}) : super(key: key);
 
   @override
@@ -19,12 +29,29 @@ class LoginView extends StackedView<LoginViewModel> {
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Center(
-          child: FormLogin(viewModel: viewModel),
+          child: FormLogin(
+            viewModel: viewModel,
+            emailController: emailController,
+            passwordController: passwordController,
+            hasEmail: viewModel.hasEmail,
+            hasPassword: viewModel.hasPassword,
+            hasEmailValidationMessage: viewModel.hasEmailValidationMessage,
+            hasPasswordValidationMessage:
+                viewModel.hasPasswordValidationMessage,
+          ),
         ),
       ),
     );
   }
 
   @override
-  LoginViewModel viewModelBuilder(BuildContext context) => LoginViewModel();
+  LoginViewModel viewModelBuilder(
+    BuildContext context,
+  ) =>
+      LoginViewModel();
+
+  @override
+  void onViewModelReady(LoginViewModel viewModel) {
+    syncFormWithViewModel(viewModel);
+  }
 }

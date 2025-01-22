@@ -8,6 +8,7 @@ import 'dart:ui' as _i8;
 
 import 'package:dartz/dartz.dart' as _i3;
 import 'package:dio/dio.dart' as _i2;
+import 'package:firebase_remote_config/firebase_remote_config.dart' as _i16;
 import 'package:flutter/material.dart' as _i6;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i5;
@@ -914,4 +915,31 @@ class MockShopService extends _i1.Mock implements _i13.ShopService {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockRemoteConfigFirebaseService extends _i1.Mock
-    implements _i15.RemoteConfigFirebaseService {}
+    implements _i15.RemoteConfigFirebaseService {
+  @override
+  _i7.Future<_i3.Either<_i10.Failure, _i16.FirebaseRemoteConfig>>
+      initializeRemoteConfig() => (super.noSuchMethod(
+            Invocation.method(
+              #initializeRemoteConfig,
+              [],
+            ),
+            returnValue: _i7.Future<
+                    _i3.Either<_i10.Failure, _i16.FirebaseRemoteConfig>>.value(
+                _FakeEither_1<_i10.Failure, _i16.FirebaseRemoteConfig>(
+              this,
+              Invocation.method(
+                #initializeRemoteConfig,
+                [],
+              ),
+            )),
+            returnValueForMissingStub: _i7.Future<
+                    _i3.Either<_i10.Failure, _i16.FirebaseRemoteConfig>>.value(
+                _FakeEither_1<_i10.Failure, _i16.FirebaseRemoteConfig>(
+              this,
+              Invocation.method(
+                #initializeRemoteConfig,
+                [],
+              ),
+            )),
+          ) as _i7.Future<_i3.Either<_i10.Failure, _i16.FirebaseRemoteConfig>>);
+}

@@ -33,19 +33,34 @@ class LoginService {
     required String password,
   }) async {
     try {
+      if (email.isEmpty || password.isEmpty) {
+        return Left(Failure(message: 'Email and password cannot be empty.'));
+      }
+
+      if (!email.contains('@')) {
+        return Left(Failure(message: 'Invalid email format.'));
+      }
+
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
       return Right(SignInDartz(message: 'Success'));
     } on FirebaseAuthException catch (e) {
-      String message = 'An error occurred. Please try again.';
-      if (e.code == 'user-not-found') {
-        message = 'Not user found!.';
-        return Left(Failure(message: message));
-      } else if (e.code == 'wrong-password') {
-        message = 'Email or Password is incorrect.';
-        return Left(Failure(message: message));
+      String message;
+      print('FirebaseAuthException: ${e.code}'); // Logging untuk debug
+
+      switch (e.code) {
+        case 'invalid-credential':
+          message = 'Email or password is invalid.';
+          break;
+        default:
+          message =
+              'An error occurred: ${e.message}'; // Tambahkan informasi error
+          break;
       }
       return Left(Failure(message: message));
+    } catch (e) {
+      print('Unexpected error: ${e.toString()}'); // Log untuk debug
+      return Left(Failure(message: 'An unexpected error occurred.'));
     }
   }
 

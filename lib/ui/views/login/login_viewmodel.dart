@@ -4,29 +4,14 @@ import 'package:my_first_app/services/login_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-class LoginViewModel extends FutureViewModel {
+class LoginViewModel extends FormViewModel {
   final _navigationService = locator<NavigationService>();
   final _dialogService = locator<DialogService>();
+  final _snackbarService = locator<SnackbarService>();
   final _authenticationService = locator<LoginService>();
 
   String? _status;
   String? get status => _status;
-
-  String? _email;
-  String? get email => _email;
-
-  String? _password;
-  String? get password => _password;
-
-  set email(String? value) {
-    _email = value;
-    notifyListeners();
-  }
-
-  set password(String? value) {
-    _password = value;
-    notifyListeners();
-  }
 
   String? _errorMessage;
   String? get errorMessage => _errorMessage;
@@ -37,6 +22,14 @@ class LoginViewModel extends FutureViewModel {
 
     res.fold((failure) {
       _errorMessage = failure.message;
+      _snackbarService.showSnackbar(
+        title: 'Error',
+        message: _errorMessage.toString(),
+        duration: Duration(seconds: 3),
+        onMainButtonTapped: () {
+          print('Main button tapped!');
+        },
+      );
       print('Masuk VM View Error: ${failure.message}');
 
       notifyListeners();
@@ -49,8 +42,12 @@ class LoginViewModel extends FutureViewModel {
     });
   }
 
-  @override
-  Future futureToRun() async {
-    return null; // Tidak melakukan apa-apa
+  void showSuccessSnackbar() {
+    _snackbarService.showSnackbar(
+      title: 'Success',
+      message: 'This is a success message!',
+    );
   }
+
+  void showErrorSnackbar() {}
 }
